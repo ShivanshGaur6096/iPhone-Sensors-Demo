@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A8C8D0D26ACADE9007A8B2E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */; };
+		1A8C8D0E26ACADE9007A8B2E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */; };
 		42D207D826AB71B700CB473A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D207D726AB71B700CB473A /* AppDelegate.swift */; };
 		42D207DA26AB71B700CB473A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D207D926AB71B700CB473A /* SceneDelegate.swift */; };
-		42D207DC26AB71B700CB473A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D207DB26AB71B700CB473A /* ViewController.swift */; };
-		42D207DF26AB71B700CB473A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D207DD26AB71B700CB473A /* Main.storyboard */; };
 		42D207E126AB71B700CB473A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D207E026AB71B700CB473A /* Assets.xcassets */; };
 		42D207E426AB71B700CB473A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D207E226AB71B700CB473A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		42D207D426AB71B700CB473A /* iPhone Sensors Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Sensors Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D207D726AB71B700CB473A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D207D926AB71B700CB473A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42D207DB26AB71B700CB473A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		42D207DE26AB71B700CB473A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42D207E026AB71B700CB473A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D207E326AB71B700CB473A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42D207E526AB71B700CB473A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +37,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A8C8D0926ACADC3007A8B2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A8C8D0A26ACADC8007A8B2E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		42D207CB26AB71B700CB473A = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +72,10 @@
 		42D207D626AB71B700CB473A /* iPhone Sensors Demo */ = {
 			isa = PBXGroup;
 			children = (
+				1A8C8D0926ACADC3007A8B2E /* Views */,
+				1A8C8D0A26ACADC8007A8B2E /* Controllers */,
 				42D207D726AB71B700CB473A /* AppDelegate.swift */,
 				42D207D926AB71B700CB473A /* SceneDelegate.swift */,
-				42D207DB26AB71B700CB473A /* ViewController.swift */,
-				42D207DD26AB71B700CB473A /* Main.storyboard */,
 				42D207E026AB71B700CB473A /* Assets.xcassets */,
 				42D207E226AB71B700CB473A /* LaunchScreen.storyboard */,
 				42D207E526AB71B700CB473A /* Info.plist */,
@@ -125,8 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D207E426AB71B700CB473A /* LaunchScreen.storyboard in Resources */,
+				1A8C8D0E26ACADE9007A8B2E /* MainViewController.xib in Resources */,
 				42D207E126AB71B700CB473A /* Assets.xcassets in Resources */,
-				42D207DF26AB71B700CB473A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +153,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D207DC26AB71B700CB473A /* ViewController.swift in Sources */,
 				42D207D826AB71B700CB473A /* AppDelegate.swift in Sources */,
 				42D207DA26AB71B700CB473A /* SceneDelegate.swift in Sources */,
+				1A8C8D0D26ACADE9007A8B2E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		42D207DD26AB71B700CB473A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42D207DE26AB71B700CB473A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		42D207E226AB71B700CB473A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,7 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				INFOPLIST_FILE = "iPhone Sensors Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,7 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				INFOPLIST_FILE = "iPhone Sensors Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
