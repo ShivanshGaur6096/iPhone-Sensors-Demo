@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A37D75626ADF6F800FF1A9D /* BarometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A37D75426ADF6F800FF1A9D /* BarometerViewController.swift */; };
+		1A37D75726ADF6F800FF1A9D /* BarometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A37D75526ADF6F800FF1A9D /* BarometerViewController.xib */; };
 		1A8C8D0D26ACADE9007A8B2E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */; };
 		1A8C8D0E26ACADE9007A8B2E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */; };
 		42D207D826AB71B700CB473A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D207D726AB71B700CB473A /* AppDelegate.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A37D75426ADF6F800FF1A9D /* BarometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarometerViewController.swift; sourceTree = "<group>"; };
+		1A37D75526ADF6F800FF1A9D /* BarometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarometerViewController.xib; sourceTree = "<group>"; };
 		1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		42D207D426AB71B700CB473A /* iPhone Sensors Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Sensors Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */,
+				1A37D75526ADF6F800FF1A9D /* BarometerViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -49,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */,
+				1A37D75426ADF6F800FF1A9D /* BarometerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A37D75726ADF6F800FF1A9D /* BarometerViewController.xib in Resources */,
 				42D207E426AB71B700CB473A /* LaunchScreen.storyboard in Resources */,
 				1A8C8D0E26ACADE9007A8B2E /* MainViewController.xib in Resources */,
 				42D207E126AB71B700CB473A /* Assets.xcassets in Resources */,
@@ -153,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A37D75626ADF6F800FF1A9D /* BarometerViewController.swift in Sources */,
 				42D207D826AB71B700CB473A /* AppDelegate.swift in Sources */,
 				42D207DA26AB71B700CB473A /* SceneDelegate.swift in Sources */,
 				1A8C8D0D26ACADE9007A8B2E /* MainViewController.swift in Sources */,
