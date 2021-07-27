@@ -15,6 +15,8 @@
 		42D207DA26AB71B700CB473A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D207D926AB71B700CB473A /* SceneDelegate.swift */; };
 		42D207E126AB71B700CB473A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D207E026AB71B700CB473A /* Assets.xcassets */; };
 		42D207E426AB71B700CB473A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D207E226AB71B700CB473A /* LaunchScreen.storyboard */; };
+		42DF2CF126B0A302007060A9 /* MagnetometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF2CEF26B0A302007060A9 /* MagnetometerViewController.swift */; };
+		42DF2CF226B0A302007060A9 /* MagnetometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DF2CF026B0A302007060A9 /* MagnetometerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		42D207E026AB71B700CB473A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D207E326AB71B700CB473A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42D207E526AB71B700CB473A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DF2CEF26B0A302007060A9 /* MagnetometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetometerViewController.swift; sourceTree = "<group>"; };
+		42DF2CF026B0A302007060A9 /* MagnetometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagnetometerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			children = (
 				1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */,
 				1A37D75526ADF6F800FF1A9D /* BarometerViewController.xib */,
+				42DF2CF026B0A302007060A9 /* MagnetometerViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -55,6 +60,7 @@
 			children = (
 				1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */,
 				1A37D75426ADF6F800FF1A9D /* BarometerViewController.swift */,
+				42DF2CEF26B0A302007060A9 /* MagnetometerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A37D75726ADF6F800FF1A9D /* BarometerViewController.xib in Resources */,
+				42DF2CF226B0A302007060A9 /* MagnetometerViewController.xib in Resources */,
 				42D207E426AB71B700CB473A /* LaunchScreen.storyboard in Resources */,
 				1A8C8D0E26ACADE9007A8B2E /* MainViewController.xib in Resources */,
 				42D207E126AB71B700CB473A /* Assets.xcassets in Resources */,
@@ -161,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A37D75626ADF6F800FF1A9D /* BarometerViewController.swift in Sources */,
+				42DF2CF126B0A302007060A9 /* MagnetometerViewController.swift in Sources */,
 				42D207D826AB71B700CB473A /* AppDelegate.swift in Sources */,
 				42D207DA26AB71B700CB473A /* SceneDelegate.swift in Sources */,
 				1A8C8D0D26ACADE9007A8B2E /* MainViewController.swift in Sources */,
