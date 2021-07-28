@@ -37,6 +37,8 @@ class BarometerViewController: UIViewController {
     ///
     private func setupView() {
         self.title = "Barometer"
+        
+        // Labels.
         self.relativeAltitudeValueLabel.text = "-"
         self.pressureValueLabel.text = " -"
     }
