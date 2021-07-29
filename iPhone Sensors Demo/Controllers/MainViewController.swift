@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
-    let sensorList: [String] = ["Barometer", "Magnetometer"]
+    let sensorList: [String] = ["Barometer", "Magnetometer", "Gyroscope"]
     
     // MARK: - Methods
     
@@ -52,6 +52,8 @@ extension MainViewController: UITableViewDelegate {
             self.navigationController?.pushViewController(BarometerViewController(), animated: true)
         case 1: // Magnetometer
             self.navigationController?.pushViewController(MagnetometerViewController(), animated: true)
+        case 2: // Gyroscope
+            self.navigationController?.pushViewController(GyroscopeViewController(), animated: true)
         default:
             print("¿?")
         }
