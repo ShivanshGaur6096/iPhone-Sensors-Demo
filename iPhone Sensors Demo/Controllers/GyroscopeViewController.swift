@@ -12,6 +12,10 @@ class GyroscopeViewController: UIViewController {
     
     // MARK: - UI Elements
     
+    @IBOutlet weak var xAxisValueLabel: UILabel!
+    @IBOutlet weak var yAxisValueLabel: UILabel!
+    @IBOutlet weak var zAxisValueLabel: UILabel!
+    
     // MARK: - Properties
     
     let gyroscopeManager = CMMotionManager()
@@ -31,6 +35,11 @@ class GyroscopeViewController: UIViewController {
     ///
     private func setupView() {
         self.title = "Gyroscope"
+        
+        // Labels.
+        self.xAxisValueLabel.text = " -"
+        self.yAxisValueLabel.text = " -"
+        self.zAxisValueLabel.text = " -"
     }
     
     ///
@@ -39,16 +48,21 @@ class GyroscopeViewController: UIViewController {
     private func setupGyroscope() {
         if self.gyroscopeManager.isGyroAvailable {
             // Set the data update interval.
-            self.gyroscopeManager.gyroUpdateInterval = 1
+            self.gyroscopeManager.gyroUpdateInterval = 0.2 // Seconds
             
             // Start Gyroscope sensor data readout.
             self.gyroscopeManager.startGyroUpdates(to: OperationQueue.main) { (data, error) in
                 if let data = data {
-                    print("Gyro x : \(data.rotationRate.x)")
-                    print("Gyro y : \(data.rotationRate.y)")
-                    print("Gyro z : \(data.rotationRate.z)")
+                    self.xAxisValueLabel.text = String(" \(data.rotationRate.x)".prefix(8)) + " rads/s" // Radians per second
+                    self.yAxisValueLabel.text = String(" \(data.rotationRate.y)".prefix(8)) + " rads/s" // Radians per second
+                    self.zAxisValueLabel.text = String(" \(data.rotationRate.z)".prefix(8)) + " rads/s" // Radians per second
+                    
                 }
             }
+        } else {
+            self.xAxisValueLabel.text = " Not Available"
+            self.yAxisValueLabel.text = " Not Available"
+            self.zAxisValueLabel.text = " Not Available"
         }
     }
     
