@@ -47,6 +47,10 @@ class MagnetometerViewController: UIViewController {
     ///
     private func setupMagnetometer() {
         if self.magnetometerManager.isMagnetometerAvailable {
+            // Set the data update internal.
+            self.magnetometerManager.magnetometerUpdateInterval = 0.2 // Seconds
+            
+            // Start Magnetometer sensor data readout.
             self.magnetometerManager.startMagnetometerUpdates(to: OperationQueue.main) { (data, error) in
                 if let magnetometerData = data {
                     self.xAxisValueLabel.text = " \(magnetometerData.magneticField.x) µT" // Microtesla

@@ -17,7 +17,7 @@ class BarometerViewController: UIViewController {
     
     // MARK: - Properties
     
-    let altimeter = CMAltimeter()
+    let altimeterManager = CMAltimeter()
     var relativeAltitude: Float = 0
     var pressure_kPa: Float = 0
     var pressure_atm: Float = 0
@@ -49,7 +49,8 @@ class BarometerViewController: UIViewController {
     private func setupBarometer() {
         
         if CMAltimeter.isRelativeAltitudeAvailable() {
-            self.altimeter.startRelativeAltitudeUpdates(to: OperationQueue.main) { (data, error) in
+            // Start Altimeter sensor data readout.
+            self.altimeterManager.startRelativeAltitudeUpdates(to: OperationQueue.main) { (data, error) in
                 if let altimeterData = data {
                     self.relativeAltitude = altimeterData.relativeAltitude.floatValue
                     self.pressure_kPa = altimeterData.pressure.floatValue
