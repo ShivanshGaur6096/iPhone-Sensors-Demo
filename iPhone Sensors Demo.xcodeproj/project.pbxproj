@@ -26,6 +26,7 @@
 		1A37D75526ADF6F800FF1A9D /* BarometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarometerViewController.xib; sourceTree = "<group>"; };
 		1A8C8D0B26ACADE9007A8B2E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1A8C8D0C26ACADE9007A8B2E /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		42138E9426B6F8F400114175 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4285EA9A26B1F9E700FC6D24 /* GyroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeViewController.swift; sourceTree = "<group>"; };
 		4285EA9B26B1F9E700FC6D24 /* GyroscopeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyroscopeViewController.xib; sourceTree = "<group>"; };
 		42D207D426AB71B700CB473A /* iPhone Sensors Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Sensors Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +75,7 @@
 		42D207CB26AB71B700CB473A = {
 			isa = PBXGroup;
 			children = (
+				42138E9426B6F8F400114175 /* README.md */,
 				42D207D626AB71B700CB473A /* iPhone Sensors Demo */,
 				42D207D526AB71B700CB473A /* Products */,
 			);
