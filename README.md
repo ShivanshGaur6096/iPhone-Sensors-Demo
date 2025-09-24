@@ -14,6 +14,30 @@ This is an enhanced version of the original [iPhone Sensors Demo](https://github
 - **Educational Content**: Helpful descriptions for each sensor
 - **Simplified UI**: Clean, maintainable codebase
 
+## 📱 Demo Videos
+
+See the enhanced sensor visualizations in action:
+
+### 🎯 Accelerometer - Vector Arrow Visualization
+https://github.com/ShivanshGaur6096/iPhone-Sensors-Demo/blob/main/Demo%20Videos/Accelerometer.mp4
+
+*Watch how the vector arrows show real-time acceleration direction and magnitude as you tilt and move the device.*
+
+### 🧭 Gyroscope - 3D Rotation Visualization  
+https://github.com/ShivanshGaur6096/iPhone-Sensors-Demo/blob/main/Demo%20Videos/Gyroscope.mp4
+
+*See the gyroscope data visualization showing rotation rates around all three axes.*
+
+### 🧲 Magnetometer - Compass Visualization
+https://github.com/ShivanshGaur6096/iPhone-Sensors-Demo/blob/main/Demo%20Videos/Magnetometer.mp4
+
+*Experience the compass-style visualization of magnetic field data and device orientation.*
+
+### 📊 Barometer - Pressure & Altitude Data
+https://github.com/ShivanshGaur6096/iPhone-Sensors-Demo/blob/main/Demo%20Videos/Barometer.mp4
+
+*View atmospheric pressure readings and relative altitude measurements in real-time.*
+
 ### 📱 Sensors Supported
 
 - **Accelerometer**: Vector arrow visualization showing direction and magnitude
