@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import SwiftUI
 import CoreMotion
 
 class MagnetometerViewController: UIViewController {
     
     // MARK: - UI Elements
     
-    @IBOutlet weak var xAxisValueLabel: UILabel!
-    @IBOutlet weak var yAxisValueLabel: UILabel!
-    @IBOutlet weak var zAxisValueLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     // MARK: - Properties
     
     let magnetometerManager = CMMotionManager()
+    let dataRecorder = DataRecorder()
+    let errorHandler = ErrorHandler()
+    var magneticField = CMMagneticField(x: 0, y: 0, z: 0)
     
     // MARK: - Methods
     
@@ -26,7 +28,7 @@ class MagnetometerViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupView()
-        
+        self.setupSwiftUIView()
         self.setupMagnetometer()
     }
     
@@ -35,11 +37,35 @@ class MagnetometerViewController: UIViewController {
     ///
     private func setupView() {
         self.title = "Magnetometer"
+    }
+    
+    ///
+    /// Setup the SwiftUI View.
+    ///
+    private func setupSwiftUIView() {
         
-        // Labels.
-        self.xAxisValueLabel.text = " -"
-        self.yAxisValueLabel.text = " -"
-        self.zAxisValueLabel.text = " -"
+        let magneticFieldBinding = Binding<CMMagneticField>(
+            get: { self.magneticField },
+            set: { self.magneticField = $0 }
+        )
+        
+        let swiftUIView = MagnetometerSwiftUIView(
+            magneticField: magneticFieldBinding,
+            dataRecorder: dataRecorder,
+            errorHandler: errorHandler
+        )
+        
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        addChild(hostingController)
+        containerView.addSubview(hostingController.view)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+        hostingController.didMove(toParent: self)
     }
     
     ///
@@ -52,17 +78,25 @@ class MagnetometerViewController: UIViewController {
             
             // Start Magnetometer sensor data readout.
             self.magnetometerManager.startMagnetometerUpdates(to: OperationQueue.main) { (data, error) in
+                self.errorHandler.handleSensorError(error, sensorName: "Magnetometer")
+                
                 if let magnetometerData = data {
-                    self.xAxisValueLabel.text = " \(magnetometerData.magneticField.x) µT" // Microtesla
-                    self.yAxisValueLabel.text = " \(magnetometerData.magneticField.y) µT" // Microtesla
-                    self.zAxisValueLabel.text = " \(magnetometerData.magneticField.z) µT" // Microtesla
+                    self.magneticField = magnetometerData.magneticField
+                    
+                    // Record data if recording
+                    if self.dataRecorder.isRecording {
+                        let magnitude = sqrt(pow(magnetometerData.magneticField.x, 2) + pow(magnetometerData.magneticField.y, 2) + pow(magnetometerData.magneticField.z, 2))
+                        self.dataRecorder.addDataPoint(magnitude)
+                    }
                 }
             }
         } else {
-            self.xAxisValueLabel.text = " Not Available"
-            self.yAxisValueLabel.text = " Not Available"
-            self.zAxisValueLabel.text = " Not Available"
+            self.errorHandler.handleError(NSError(domain: "MagnetometerError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Magnetometer not available on this device"]), context: "Magnetometer Setup")
         }
+    }
+    
+    deinit {
+        magnetometerManager.stopMagnetometerUpdates()
     }
     
 }

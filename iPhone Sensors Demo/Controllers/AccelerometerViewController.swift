@@ -1,15 +1,15 @@
 //
-//  GyroscopeViewController.swift
+//  AccelerometerViewController.swift
 //  iPhone Sensors Demo
 //
-//  Created by Aitor Zubizarreta Perez on 28/07/2021.
+//  Created by Shivansh Gaur on 22/09/2025.
 //
 
 import UIKit
 import SwiftUI
 import CoreMotion
 
-class GyroscopeViewController: UIViewController {
+class AccelerometerViewController: UIViewController {
     
     // MARK: - UI Elements
     
@@ -17,10 +17,10 @@ class GyroscopeViewController: UIViewController {
     
     // MARK: - Properties
     
-    let gyroscopeManager = CMMotionManager()
+    let accelerometerManager = CMMotionManager()
     let dataRecorder = DataRecorder()
     let errorHandler = ErrorHandler()
-    var rotationRate = CMRotationRate(x: 0, y: 0, z: 0)
+    var acceleration = CMAcceleration(x: 0, y: 0, z: 0)
     
     // MARK: - Methods
     
@@ -29,27 +29,27 @@ class GyroscopeViewController: UIViewController {
         
         self.setupView()
         self.setupSwiftUIView()
-        self.setupGyroscope()
+        self.setupAccelerometer()
     }
     
     ///
     /// Setup the View.
     ///
     private func setupView() {
-        self.title = "Gyroscope"
+        self.title = "Accelerometer"
     }
     
     ///
     /// Setup the SwiftUI View.
     ///
     private func setupSwiftUIView() {
-        let rotationRateBinding = Binding<CMRotationRate>(
-            get: { self.rotationRate },
-            set: { self.rotationRate = $0 }
+        let accelerationBinding = Binding<CMAcceleration>(
+            get: { self.acceleration },
+            set: { self.acceleration = $0 }
         )
         
-        let swiftUIView = GyroscopeSwiftUIView(
-            rotationRate: rotationRateBinding,
+        let swiftUIView = AccelerometerSwiftUIView(
+            acceleration: accelerationBinding,
             dataRecorder: dataRecorder,
             errorHandler: errorHandler
         )
@@ -68,34 +68,33 @@ class GyroscopeViewController: UIViewController {
     }
     
     ///
-    /// Setup the Gyroscope sensor.
+    /// Setup the Accelerometer sensor.
     ///
-    private func setupGyroscope() {
-        if self.gyroscopeManager.isGyroAvailable {
+    private func setupAccelerometer() {
+        if self.accelerometerManager.isAccelerometerAvailable {
             // Set the data update interval.
-            self.gyroscopeManager.gyroUpdateInterval = 0.2 // Seconds
+            self.accelerometerManager.accelerometerUpdateInterval = 0.1 // Seconds
             
-            // Start Gyroscope sensor data readout.
-            self.gyroscopeManager.startGyroUpdates(to: OperationQueue.main) { (data, error) in
-                self.errorHandler.handleSensorError(error, sensorName: "Gyroscope")
+            // Start Accelerometer sensor data readout.
+            self.accelerometerManager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
+                self.errorHandler.handleSensorError(error, sensorName: "Accelerometer")
                 
-                if let data = data {
-                    self.rotationRate = data.rotationRate
+                if let accelerometerData = data {
+                    self.acceleration = accelerometerData.acceleration
                     
                     // Record data if recording
                     if self.dataRecorder.isRecording {
-                        let magnitude = sqrt(pow(data.rotationRate.x, 2) + pow(data.rotationRate.y, 2) + pow(data.rotationRate.z, 2))
+                        let magnitude = sqrt(pow(accelerometerData.acceleration.x, 2) + pow(accelerometerData.acceleration.y, 2) + pow(accelerometerData.acceleration.z, 2))
                         self.dataRecorder.addDataPoint(magnitude)
                     }
                 }
             }
         } else {
-            self.errorHandler.handleError(NSError(domain: "GyroscopeError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Gyroscope not available on this device"]), context: "Gyroscope Setup")
+            self.errorHandler.handleError(NSError(domain: "AccelerometerError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Accelerometer not available on this device"]), context: "Accelerometer Setup")
         }
     }
     
     deinit {
-        gyroscopeManager.stopGyroUpdates()
+        accelerometerManager.stopAccelerometerUpdates()
     }
-    
 }

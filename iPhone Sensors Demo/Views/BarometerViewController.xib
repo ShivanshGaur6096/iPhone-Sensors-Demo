@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BarometerViewController" customModule="iPhone_Sensors_Demo" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="container-view" id="container-outlet"/>
+                <outlet property="pressureTitleLabel" destination="f6N-ka-4Lv" id="bag-RP-i4X"/>
                 <outlet property="pressureValueLabel" destination="VzS-b8-n4S" id="oSe-bE-8cV"/>
+                <outlet property="relativeAltitudeTitleLabel" destination="YmU-Ru-o4O" id="zkH-D1-1JU"/>
                 <outlet property="relativeAltitudeValueLabel" destination="GHd-W9-hOT" id="2IB-yt-Ssz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,8 +24,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="container-view">
+                    <rect key="frame" x="0.0" y="96" width="414" height="732"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OHW-pN-s5a">
-                    <rect key="frame" x="0.0" y="64" width="414" height="90"/>
+                    <rect key="frame" x="0.0" y="116" width="414" height="90"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUv-Pw-IaI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
@@ -76,6 +83,10 @@
             <constraints>
                 <constraint firstItem="OHW-pN-s5a" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="IMk-lw-ZHl"/>
                 <constraint firstItem="OHW-pN-s5a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="S10-dT-zT3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="container-view" secondAttribute="bottom" id="container-bottom"/>
+                <constraint firstItem="container-view" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="container-leading"/>
+                <constraint firstItem="container-view" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="container-top"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="container-view" secondAttribute="trailing" id="container-trailing"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OHW-pN-s5a" secondAttribute="trailing" id="dmX-DZ-MdJ"/>
             </constraints>
             <point key="canvasLocation" x="-197.10144927536234" y="68.973214285714278"/>

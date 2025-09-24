@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
-    let sensorList: [String] = ["Barometer", "Magnetometer", "Gyroscope"]
+    let sensorList: [String] = ["Barometer", "Magnetometer", "Gyroscope", "Accelerometer"]
     
     // MARK: - Methods
     
@@ -45,17 +45,20 @@ class MainViewController: UIViewController {
 // MARK: - UITable View Delegate
 
 extension MainViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: // Barometer
-            self.navigationController?.pushViewController(BarometerViewController(), animated: true)
+            self.navigationController?.pushViewController(BarometerViewController(nibName: "BarometerViewController", bundle: nil), animated: true)
         case 1: // Magnetometer
-            self.navigationController?.pushViewController(MagnetometerViewController(), animated: true)
+            self.navigationController?.pushViewController(MagnetometerViewController(nibName: "MagnetometerViewController", bundle: nil), animated: true)
         case 2: // Gyroscope
-            self.navigationController?.pushViewController(GyroscopeViewController(), animated: true)
+            self.navigationController?.pushViewController(GyroscopeViewController(nibName: "GyroscopeViewController", bundle: nil), animated: true)
+        case 3: // Accelerometer
+            self.navigationController?.pushViewController(AccelerometerViewController(nibName: "AccelerometerViewController", bundle: nil), animated: true)
+//            self.navigationController?.pushViewController(AccelerometerViewController(), animated: true)
         default:
-            print("¿?")
+            print("Unknown sensor selected")
         }
     }
     
